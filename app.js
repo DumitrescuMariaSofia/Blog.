@@ -1,5 +1,5 @@
 document.addEventListener("mousemove", function (e) {
-    let body = document.querySelector("body");
+    let container = document.querySelector(".animated-flowers");
     
     let flower = document.createElement("div");
     flower.classList.add("flower");
@@ -10,18 +10,14 @@ document.addEventListener("mousemove", function (e) {
     flower.style.left = `${x - 30}px`; 
     flower.style.top = `${y - 30}px`;
     
-    
     let size = Math.random() * 100; 
     flower.style.width = `${50 + size}px`; 
     flower.style.height = `${50 + size}px`; 
     
-    
     let rotation = Math.random() * 360;
     flower.style.transform = `rotate(${rotation}deg)`;
 
-
-    body.appendChild(flower);
-
+    container.appendChild(flower);
 
     setTimeout(function () {
         flower.remove();
